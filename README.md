@@ -2,6 +2,22 @@
 
 Some name needs every protocol.
 
+### Todo
+
+0. Authed WebSocketConnection
+1. https://en.wikipedia.org/wiki/Signal_Protocol
+2. https://fidoalliance.org/specs/fido-u2f-v1.0-ps-20141009/fido-u2f-overview-ps-20141009.html
+3. https://tools.ietf.org/html/rfc7519
+4. https://www.rfc-editor.org/rfc/rfc7516.txt
+5. Think on licensing: https://trustee.ietf.org/index.html
+6. Protocol Nesting
+7. Reference Implementation in typescript/enscripten or https://www.w3.org/TR/WebCryptoAPI/
+8. https://datatracker.ietf.org/wg/jose/documents/
+9. Specify encryption Parameters
+10. Integration with OAuth Flow
+
+### Overview
+
 The goal of this protocol is to be open and don’t have a need of a transport encryption. The Sack Protocol should ensure that there is no replay attack possible and the key life times on both ends are in your control.
 
 This protocol will be handled by a client-installed-service like parity from the etherium blockchain. This service will be install on the customer side and has an external side which implements these protocol.
@@ -14,7 +30,7 @@ This service should implemented on the web platform which has supports asm.js or
 
 The protocol implementation should be build on an abstraction to run the software with nashorn within actual jvms and utilise the jvm given crypto functions. The communication Protocol should not use http req-res pattern, instead there will used:
 
- “https://tools.ietf.org/html/rfc6455”
+ https://tools.ietf.org/html/rfc6455
 
 so enable a fully bidirectional communication. If this communication is not possible there should be a http based protocol pattern with degraded functionality implemented. WebSocket tokenizer/controlblock protocol should like this:
 
